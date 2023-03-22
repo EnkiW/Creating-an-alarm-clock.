@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Quicksand:wght@500&family=Roboto+Mono&display=swap');
+
+/*font-family: 'Oswald', sans-serif;*/
+/*font-family: 'Quicksand', sans-serif;*/
+/*font-family: 'Roboto Mono', monospace;*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 90vh;
+    background-color: rgb(246, 249, 254);
+}
+
+.container {
+    width: 600px;
+    background-color: rgba(249, 168, 165, 0.8);
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.container img {
+    max-width: 300px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 60px;
+    border: 3px solid #f9cdc4;
+}
+
+.container h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 30px 0;
+}
+
+.clock-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.clock-settings .column {
+    overflow: hidden;
+    border-radius: 20px;
+    /*padding: 0 10px;*/
+    border: 3px solid #f89b97;
+    width: calc(100% / 3 - 5px);
+}
+
+.column select {
+    outline: none;
+    border: none;
+    height: 55px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 18px;
+    /*margin: 5;*/
+    background-color: rgb(248, 225, 220);
+}
+
+.container button {
+    width: 90%;
+    outline: none;
+    border: none;
+    color: rgb(0, 10, 2);
+    background-color: rgb(248, 225, 220);
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 60px;
+}
+
