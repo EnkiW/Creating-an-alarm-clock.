@@ -4,6 +4,8 @@ const btn = document.querySelector('button')
 const Settings = document.querySelector('.clock-settings')
 
 let alarmTime;
+let ring = new Audio("./audio/old.mp3")
+let alarmSet = false;
 console.log(selectAlarm);
 
 for (let i = 12; i > 0; i--) {
@@ -36,21 +38,31 @@ setInterval(() => {
     m = m < 10 ? '0' + m : m;
     s = s < 10 ? '0' + s : s;
 
-    console.log(`${h}:${m}:${s} ${halfDay}`)
+
     currentTime.innerText = `${h}:${m}:${s} ${halfDay}`;
 
     if (alarmTime == `${h}:${m} ${halfDay}`){
-        console.log('Alarm!')
+        console.log('Alarm!');
+        ring.play();
+        ring.loop = true;
     }
 }, 1000)
 
 function setAlarm() {
+    if (alarmSet){
+        alarmTime = '';
+        ring.pause();
+        Settings.classList.remove("disable");
+        btn.innerText = "Turn on the alarm clock";
+        return alarmSet = false;
+    }
     let time = `${selectAlarm[0].value}:${selectAlarm[1].value} ${selectAlarm[2].value}`;
 
 
     if (time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")) {
         return alert('Choose your alarm options');
     }
+    alarmSet = true;
     alarmTime = time;
     Settings.classList.add('disable')
     btn.innerText = 'Turn off';
